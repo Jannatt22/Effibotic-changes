@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Handle scroll event to add shadow when scrolled
   useEffect(() => {
@@ -47,11 +48,25 @@ const Navbar = () => {
   };
 
   const handleMouseEnter = (dropdown: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
     setActiveDropdown(dropdown);
   };
 
   const handleMouseLeave = () => {
-    setActiveDropdown(null);
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 300); // 300ms delay before closing dropdown
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setActiveDropdown(null); // Close dropdown after clicking
   };
 
   return (
@@ -76,11 +91,21 @@ const Navbar = () => {
         {/* Center Navigation */}
         <div className="hidden md:flex items-center justify-center space-x-16 flex-1 mx-4">
           {/* Product Dropdown */}
-          <div className="relative" onMouseEnter={() => handleMouseEnter('product')} onMouseLeave={handleMouseLeave}>
+          <div 
+            className="relative group" 
+            onMouseEnter={() => handleMouseEnter('product')} 
+            onMouseLeave={handleMouseLeave}
+          >
             <div
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium text-xl cursor-pointer flex items-center gap-1"
-              onClick={() => handleToggleDropdown('product')}
-              onKeyDown={(e) => handleKeyDownDropdown(e, 'product')}
+              onClick={() => scrollToSection('products')}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  scrollToSection('products');
+                } else {
+                  handleKeyDownDropdown(e, 'product');
+                }
+              }}
               aria-label="Products"
               tabIndex={0}
               aria-expanded={activeDropdown === 'product'}
@@ -92,10 +117,14 @@ const Navbar = () => {
               </svg>
             </div>
             {activeDropdown === 'product' && (
-              <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                 <div className="py-1" role="menu" aria-orientation="vertical">
                   <Link 
-                    href="/product/ai-receptionist"
+                    href="/#products"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('products');
+                    }}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
                     role="menuitem"
                     tabIndex={0}
@@ -103,7 +132,11 @@ const Navbar = () => {
                     AI Receptionist
                   </Link>
                   <Link 
-                    href="/product/ai-chatbot"
+                    href="/#products"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('products');
+                    }}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
                     role="menuitem"
                     tabIndex={0}
@@ -111,7 +144,11 @@ const Navbar = () => {
                     AI Chatbot
                   </Link>
                   <Link 
-                    href="/product/ai-lead-generator"
+                    href="/#products"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('products');
+                    }}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
                     role="menuitem"
                     tabIndex={0}
@@ -124,7 +161,11 @@ const Navbar = () => {
           </div>
           
           {/* Services Dropdown */}
-          <div className="relative" onMouseEnter={() => handleMouseEnter('services')} onMouseLeave={handleMouseLeave}>
+          <div 
+            className="relative group" 
+            onMouseEnter={() => handleMouseEnter('services')} 
+            onMouseLeave={handleMouseLeave}
+          >
             <div
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium text-xl cursor-pointer flex items-center gap-1"
               onClick={() => handleToggleDropdown('services')}
@@ -140,7 +181,7 @@ const Navbar = () => {
               </svg>
             </div>
             {activeDropdown === 'services' && (
-              <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                 <div className="py-1" role="menu" aria-orientation="vertical">
                   <Link 
                     href="/services/ai-consultation"
@@ -180,7 +221,11 @@ const Navbar = () => {
           </div>
           
           {/* Training Dropdown */}
-          <div className="relative" onMouseEnter={() => handleMouseEnter('training')} onMouseLeave={handleMouseLeave}>
+          <div 
+            className="relative group" 
+            onMouseEnter={() => handleMouseEnter('training')} 
+            onMouseLeave={handleMouseLeave}
+          >
             <div
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium text-xl cursor-pointer flex items-center gap-1"
               onClick={() => handleToggleDropdown('training')}
@@ -196,7 +241,7 @@ const Navbar = () => {
               </svg>
             </div>
             {activeDropdown === 'training' && (
-              <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                 <div className="py-1" role="menu" aria-orientation="vertical">
                   <Link 
                     href="/training/sme"
@@ -264,150 +309,166 @@ const Navbar = () => {
             )}
           </button>
         </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <div 
-        className={`md:hidden absolute w-full bg-white transition-all duration-300 ease-in-out shadow-lg ${
-          isMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0 invisible'
-        } overflow-hidden`}
-      >
-        <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-          {/* Mobile Product Dropdown */}
-          <div>
-            <div 
-              className="flex justify-between items-center text-gray-700 hover:text-primary-600 transition-colors font-medium py-2 px-4 text-xl"
-              onClick={() => handleToggleDropdown('mobile-product')}
-              onKeyDown={(e) => handleKeyDownDropdown(e, 'mobile-product')}
-              tabIndex={isMenuOpen ? 0 : -1}
-              aria-expanded={activeDropdown === 'mobile-product'}
-              aria-haspopup="true"
-            >
-              <span>Products</span>
-              <svg className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-product' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-            {activeDropdown === 'mobile-product' && (
-              <div className="pl-8 py-2 space-y-2">
-                <Link 
-                  href="/product/ai-receptionist"
-                  className="block text-gray-700 hover:text-primary-600 py-1"
-                  tabIndex={isMenuOpen ? 0 : -1}
-                  onClick={handleToggleMenu}
-                >
-                  AI Receptionist
-                </Link>
-                <Link 
-                  href="/product/ai-chatbot"
-                  className="block text-gray-700 hover:text-primary-600 py-1"
-                  tabIndex={isMenuOpen ? 0 : -1}
-                  onClick={handleToggleMenu}
-                >
-                  AI Chatbot
-                </Link>
-                <Link 
-                  href="/product/ai-lead-generator"
-                  className="block text-gray-700 hover:text-primary-600 py-1"
-                  tabIndex={isMenuOpen ? 0 : -1}
-                  onClick={handleToggleMenu}
-                >
-                  AI Lead Generator
-                </Link>
+        
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 w-full bg-white shadow-md mt-0 py-4 md:hidden z-50">
+            <div className="container mx-auto px-4">
+              <div className="flex flex-col space-y-4">
+                {/* Mobile Products Dropdown */}
+                <div>
+                  <div
+                    className="flex justify-between items-center text-gray-700 hover:text-primary-600 transition-colors"
+                    onClick={() => {
+                      if (activeDropdown === 'product-mobile') {
+                        setActiveDropdown(null);
+                      } else {
+                        setActiveDropdown('product-mobile');
+                        scrollToSection('products');
+                      }
+                    }}
+                  >
+                    <span className="font-medium">Products</span>
+                    <svg 
+                      className={`w-4 h-4 transition-transform ${activeDropdown === 'product-mobile' ? 'rotate-180' : ''}`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  {activeDropdown === 'product-mobile' && (
+                    <div className="pl-4 mt-2 space-y-2 border-l border-gray-200">
+                      <Link 
+                        href="/#products"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection('products');
+                          setIsMenuOpen(false);
+                        }}
+                        className="block text-gray-600 hover:text-primary-600"
+                      >
+                        AI Receptionist
+                      </Link>
+                      <Link 
+                        href="/#products"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection('products');
+                          setIsMenuOpen(false);
+                        }}
+                        className="block text-gray-600 hover:text-primary-600"
+                      >
+                        AI Chatbot
+                      </Link>
+                      <Link 
+                        href="/#products"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection('products');
+                          setIsMenuOpen(false);
+                        }}
+                        className="block text-gray-600 hover:text-primary-600"
+                      >
+                        AI Lead Generator
+                      </Link>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Mobile Services Dropdown */}
+                <div>
+                  <div
+                    className="flex justify-between items-center text-gray-700 hover:text-primary-600 transition-colors"
+                    onClick={() => handleToggleDropdown('services-mobile')}
+                  >
+                    <span className="font-medium">Services</span>
+                    <svg 
+                      className={`w-4 h-4 transition-transform ${activeDropdown === 'services-mobile' ? 'rotate-180' : ''}`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  {activeDropdown === 'services-mobile' && (
+                    <div className="pl-4 mt-2 space-y-2 border-l border-gray-200">
+                      <Link 
+                        href="/services/ai-consultation" 
+                        className="block text-gray-600 hover:text-primary-600"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        AI Consultation
+                      </Link>
+                      <Link 
+                        href="/services/business-intelligence" 
+                        className="block text-gray-600 hover:text-primary-600"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Business Intelligence
+                      </Link>
+                      <Link 
+                        href="/services/it-support" 
+                        className="block text-gray-600 hover:text-primary-600"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        IT Support
+                      </Link>
+                      <Link 
+                        href="/services/ai-startup-suite" 
+                        className="block text-gray-600 hover:text-primary-600"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        AI Startup Suite
+                      </Link>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Mobile Training Dropdown */}
+                <div>
+                  <div
+                    className="flex justify-between items-center text-gray-700 hover:text-primary-600 transition-colors"
+                    onClick={() => handleToggleDropdown('training-mobile')}
+                  >
+                    <span className="font-medium">Training</span>
+                    <svg 
+                      className={`w-4 h-4 transition-transform ${activeDropdown === 'training-mobile' ? 'rotate-180' : ''}`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  {activeDropdown === 'training-mobile' && (
+                    <div className="pl-4 mt-2 space-y-2 border-l border-gray-200">
+                      <Link 
+                        href="/training/sme" 
+                        className="block text-gray-600 hover:text-primary-600"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Training for SME
+                      </Link>
+                      <Link 
+                        href="/training/startups" 
+                        className="block text-gray-600 hover:text-primary-600"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Training for Startups
+                      </Link>
+                    </div>
+                  )}
+                </div>
               </div>
-            )}
-          </div>
-
-          {/* Mobile Services Dropdown */}
-          <div>
-            <div 
-              className="flex justify-between items-center text-gray-700 hover:text-primary-600 transition-colors font-medium py-2 px-4 text-xl"
-              onClick={() => handleToggleDropdown('mobile-services')}
-              onKeyDown={(e) => handleKeyDownDropdown(e, 'mobile-services')}
-              tabIndex={isMenuOpen ? 0 : -1}
-              aria-expanded={activeDropdown === 'mobile-services'}
-              aria-haspopup="true"
-            >
-              <span>Services</span>
-              <svg className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
             </div>
-            {activeDropdown === 'mobile-services' && (
-              <div className="pl-8 py-2 space-y-2">
-                <Link 
-                  href="/services/ai-consultation"
-                  className="block text-gray-700 hover:text-primary-600 py-1"
-                  tabIndex={isMenuOpen ? 0 : -1}
-                  onClick={handleToggleMenu}
-                >
-                  AI Consultation
-                </Link>
-                <Link 
-                  href="/services/business-intelligence"
-                  className="block text-gray-700 hover:text-primary-600 py-1"
-                  tabIndex={isMenuOpen ? 0 : -1}
-                  onClick={handleToggleMenu}
-                >
-                  Business Intelligence
-                </Link>
-                <Link 
-                  href="/services/it-support"
-                  className="block text-gray-700 hover:text-primary-600 py-1"
-                  tabIndex={isMenuOpen ? 0 : -1}
-                  onClick={handleToggleMenu}
-                >
-                  IT Support
-                </Link>
-                <Link 
-                  href="/services/ai-startup-suite"
-                  className="block text-gray-700 hover:text-primary-600 py-1"
-                  tabIndex={isMenuOpen ? 0 : -1}
-                  onClick={handleToggleMenu}
-                >
-                  AI Startup Suite
-                </Link>
-              </div>
-            )}
           </div>
-          
-          {/* Mobile Training Dropdown */}
-          <div>
-            <div 
-              className="flex justify-between items-center text-gray-700 hover:text-primary-600 transition-colors font-medium py-2 px-4 text-xl"
-              onClick={() => handleToggleDropdown('mobile-training')}
-              onKeyDown={(e) => handleKeyDownDropdown(e, 'mobile-training')}
-              tabIndex={isMenuOpen ? 0 : -1}
-              aria-expanded={activeDropdown === 'mobile-training'}
-              aria-haspopup="true"
-            >
-              <span>Training</span>
-              <svg className={`w-5 h-5 transition-transform ${activeDropdown === 'mobile-training' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-            {activeDropdown === 'mobile-training' && (
-              <div className="pl-8 py-2 space-y-2">
-                <Link 
-                  href="/training/sme"
-                  className="block text-gray-700 hover:text-primary-600 py-1"
-                  tabIndex={isMenuOpen ? 0 : -1}
-                  onClick={handleToggleMenu}
-                >
-                  Training for SME
-                </Link>
-                <Link 
-                  href="/training/startups"
-                  className="block text-gray-700 hover:text-primary-600 py-1"
-                  tabIndex={isMenuOpen ? 0 : -1}
-                  onClick={handleToggleMenu}
-                >
-                  Training for Startups
-                </Link>
-              </div>
-            )}
-          </div>
-        </div>
+        )}
       </div>
     </nav>
   );
