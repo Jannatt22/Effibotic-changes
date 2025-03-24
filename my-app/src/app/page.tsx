@@ -107,19 +107,17 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">AI Receptionist</h3>
               <p className="text-gray-600 mb-6">
-                Automate customer inquiries and appointment scheduling with our intelligent virtual receptionist that handles calls, messages, and emails 24/7.
+                Our AI receptionist handles calls, schedules appointments, and routes inquiries, allowing your staff to focus on critical tasks.
               </p>
-              <ScrollLink 
-                href="/#products" 
+              <Link 
+                href="/products/ai-receptionist" 
                 className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700"
-                ariaLabel="Learn more about AI Receptionist"
-                tabIndex={0}
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </ScrollLink>
+              </Link>
             </div>
             
             {/* AI Chatbot */}
@@ -131,19 +129,17 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">AI Chatbot</h3>
               <p className="text-gray-600 mb-6">
-                Engage with website visitors in real-time through our conversational AI chatbot that understands context, provides accurate information, and qualifies leads.
+                Deploy intelligent chatbots that understand natural language and provide instant support to your customers 24/7.
               </p>
-              <ScrollLink 
-                href="/#products" 
+              <Link 
+                href="/products/ai-chatbot" 
                 className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700"
-                ariaLabel="Learn more about AI Chatbot"
-                tabIndex={0}
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </ScrollLink>
+              </Link>
             </div>
             
             {/* AI Lead Generator */}
@@ -155,19 +151,17 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">AI Lead Generator</h3>
               <p className="text-gray-600 mb-6">
-                Identify and nurture qualified leads with our AI-powered lead generation tool that captures, analyzes, and prioritizes prospects based on conversion potential.
+                Leverage AI to identify, qualify, and engage potential customers, creating a consistent pipeline of high-quality leads.
               </p>
-              <ScrollLink 
-                href="/#products" 
+              <Link 
+                href="/products/ai-lead-generator" 
                 className="inline-flex items-center text-green-600 font-medium hover:text-green-700"
-                ariaLabel="Learn more about AI Lead Generator"
-                tabIndex={0}
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </ScrollLink>
+              </Link>
             </div>
           </div>
         </div>
