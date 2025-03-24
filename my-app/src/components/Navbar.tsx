@@ -227,44 +227,59 @@ const Navbar = () => {
           >
             <div
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium text-xl cursor-pointer flex items-center gap-1"
-              onClick={() => handleToggleDropdown('training')}
-              onKeyDown={(e) => handleKeyDownDropdown(e, 'training')}
+              onClick={() => {
+                handleToggleDropdown('training');
+                scrollToSection('training');
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  scrollToSection('training');
+                } else {
+                  handleKeyDownDropdown(e, 'training');
+                }
+              }}
               aria-label="Training"
               tabIndex={0}
               aria-expanded={activeDropdown === 'training'}
               aria-haspopup="true"
             >
-              Training
-              <svg className={`w-4 h-4 transition-transform ${activeDropdown === 'training' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+              <ScrollLink
+                href="/#training"
+                className="flex items-center gap-1"
+                ariaLabel="Training"
+              >
+                Training
+                <svg className={`w-4 h-4 transition-transform ${activeDropdown === 'training' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </ScrollLink>
             </div>
             {activeDropdown === 'training' && (
               <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                 <div className="py-1" role="menu" aria-orientation="vertical">
                   <ScrollLink 
-                    href="/training/sme"
+                    href="/#training"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    ariaLabel="Training for SME"
+                    ariaLabel="AI Training for SME / Startup"
                     tabIndex={0}
                   >
-                    Training for SME
+                    AI Training for SME / Startup
                   </ScrollLink>
                   <ScrollLink 
-                    href="/training/startups"
+                    href="/#training"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    ariaLabel="Training for Startups"
+                    ariaLabel="AI Training for Healthcare Professionals"
                     tabIndex={0}
                   >
-                    Training for Startups
+                    AI Training for Healthcare Professionals
                   </ScrollLink>
                   <ScrollLink 
-                    href="/training/advanced-automation"
+                    href="/#training"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    ariaLabel="Advanced Automation Training"
+                    ariaLabel="Advanced AI Automation Training"
                     tabIndex={0}
                   >
-                    Advanced Automation Training
+                    Advanced AI Automation Training
                   </ScrollLink>
                 </div>
               </div>
@@ -452,9 +467,19 @@ const Navbar = () => {
                 <div>
                   <div
                     className="flex justify-between items-center text-gray-700 hover:text-primary-600 transition-colors"
-                    onClick={() => handleToggleDropdown('training-mobile')}
+                    onClick={() => {
+                      handleToggleDropdown('training-mobile');
+                      scrollToSection('training');
+                    }}
                   >
-                    <span className="font-medium">Training</span>
+                    <ScrollLink
+                      href="/#training"
+                      className="font-medium flex-grow"
+                      ariaLabel="Training"
+                      onAfterClick={() => setIsMenuOpen(false)}
+                    >
+                      Training
+                    </ScrollLink>
                     <svg 
                       className={`w-4 h-4 transition-transform ${activeDropdown === 'training-mobile' ? 'rotate-180' : ''}`} 
                       fill="none" 
@@ -468,31 +493,31 @@ const Navbar = () => {
                   {activeDropdown === 'training-mobile' && (
                     <div className="pl-4 mt-2 space-y-2 border-l border-gray-200">
                       <ScrollLink 
-                        href="/training/sme" 
+                        href="/#training" 
                         className="block text-gray-600 hover:text-primary-600"
-                        ariaLabel="Training for SME"
+                        ariaLabel="AI Training for SME / Startup"
                         tabIndex={0}
                         onAfterClick={() => setIsMenuOpen(false)}
                       >
-                        Training for SME
+                        AI Training for SME / Startup
                       </ScrollLink>
                       <ScrollLink 
-                        href="/training/startups" 
+                        href="/#training" 
                         className="block text-gray-600 hover:text-primary-600"
-                        ariaLabel="Training for Startups"
+                        ariaLabel="AI Training for Healthcare Professionals"
                         tabIndex={0}
                         onAfterClick={() => setIsMenuOpen(false)}
                       >
-                        Training for Startups
+                        AI Training for Healthcare Professionals
                       </ScrollLink>
                       <ScrollLink 
-                        href="/training/advanced-automation" 
+                        href="/#training" 
                         className="block text-gray-600 hover:text-primary-600"
-                        ariaLabel="Advanced Automation Training"
+                        ariaLabel="Advanced AI Automation Training"
                         tabIndex={0}
                         onAfterClick={() => setIsMenuOpen(false)}
                       >
-                        Advanced Automation Training
+                        Advanced AI Automation Training
                       </ScrollLink>
                     </div>
                   )}
