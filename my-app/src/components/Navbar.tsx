@@ -80,11 +80,12 @@ const Navbar = () => {
         {/* Logo and Company Name */}
         <Link href="/" className="flex items-center gap-3">
           <Image 
-            src="/logo-icon.svg" 
+            src="/images/logo_new.png" 
             alt="Effibotic Logo" 
-            width={48} 
-            height={48} 
-            className="h-12 w-auto"
+            width={80} 
+            height={80} 
+            className="h-16 w-auto object-contain"
+            priority
           />
           <span className="text-3xl font-bold text-primary-700">Effibotic</span>
         </Link>
