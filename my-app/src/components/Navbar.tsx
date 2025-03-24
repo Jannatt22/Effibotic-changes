@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ScrollLink from './ScrollLink';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -111,50 +112,44 @@ const Navbar = () => {
               aria-expanded={activeDropdown === 'product'}
               aria-haspopup="true"
             >
-              Products
-              <svg className={`w-4 h-4 transition-transform ${activeDropdown === 'product' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+              <ScrollLink
+                href="/#products"
+                className="flex items-center gap-1"
+                ariaLabel="Products"
+              >
+                Products
+                <svg className={`w-4 h-4 transition-transform ${activeDropdown === 'product' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </ScrollLink>
             </div>
             {activeDropdown === 'product' && (
               <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                 <div className="py-1" role="menu" aria-orientation="vertical">
-                  <Link 
+                  <ScrollLink 
                     href="/#products"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('products');
-                    }}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    role="menuitem"
+                    ariaLabel="AI Receptionist"
                     tabIndex={0}
                   >
                     AI Receptionist
-                  </Link>
-                  <Link 
+                  </ScrollLink>
+                  <ScrollLink 
                     href="/#products"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('products');
-                    }}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    role="menuitem"
+                    ariaLabel="AI Chatbot"
                     tabIndex={0}
                   >
                     AI Chatbot
-                  </Link>
-                  <Link 
+                  </ScrollLink>
+                  <ScrollLink 
                     href="/#products"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('products');
-                    }}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    role="menuitem"
+                    ariaLabel="AI Lead Generator"
                     tabIndex={0}
                   >
                     AI Lead Generator
-                  </Link>
+                  </ScrollLink>
                 </div>
               </div>
             )}
@@ -168,53 +163,57 @@ const Navbar = () => {
           >
             <div
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium text-xl cursor-pointer flex items-center gap-1"
-              onClick={() => handleToggleDropdown('services')}
-              onKeyDown={(e) => handleKeyDownDropdown(e, 'services')}
+              onClick={() => scrollToSection('services')}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  scrollToSection('services');
+                } else {
+                  handleKeyDownDropdown(e, 'services');
+                }
+              }}
               aria-label="Services"
               tabIndex={0}
               aria-expanded={activeDropdown === 'services'}
               aria-haspopup="true"
             >
-              Services
-              <svg className={`w-4 h-4 transition-transform ${activeDropdown === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+              <ScrollLink
+                href="/#services"
+                className="flex items-center gap-1"
+                ariaLabel="Services"
+              >
+                Services
+                <svg className={`w-4 h-4 transition-transform ${activeDropdown === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </ScrollLink>
             </div>
             {activeDropdown === 'services' && (
               <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                 <div className="py-1" role="menu" aria-orientation="vertical">
-                  <Link 
-                    href="/services/ai-consultation"
+                  <ScrollLink 
+                    href="/#services"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    role="menuitem"
+                    ariaLabel="AI Consultation"
                     tabIndex={0}
                   >
                     AI Consultation
-                  </Link>
-                  <Link 
-                    href="/services/business-intelligence"
+                  </ScrollLink>
+                  <ScrollLink 
+                    href="/#services"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    role="menuitem"
+                    ariaLabel="Business Intelligence"
                     tabIndex={0}
                   >
                     Business Intelligence
-                  </Link>
-                  <Link 
-                    href="/services/it-support"
+                  </ScrollLink>
+                  <ScrollLink 
+                    href="/#services"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    role="menuitem"
-                    tabIndex={0}
-                  >
-                    IT Support
-                  </Link>
-                  <Link 
-                    href="/services/ai-startup-suite"
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    role="menuitem"
+                    ariaLabel="AI Startup Suite"
                     tabIndex={0}
                   >
                     AI Startup Suite
-                  </Link>
+                  </ScrollLink>
                 </div>
               </div>
             )}
@@ -243,22 +242,30 @@ const Navbar = () => {
             {activeDropdown === 'training' && (
               <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                 <div className="py-1" role="menu" aria-orientation="vertical">
-                  <Link 
+                  <ScrollLink 
                     href="/training/sme"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    role="menuitem"
+                    ariaLabel="Training for SME"
                     tabIndex={0}
                   >
                     Training for SME
-                  </Link>
-                  <Link 
+                  </ScrollLink>
+                  <ScrollLink 
                     href="/training/startups"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    role="menuitem"
+                    ariaLabel="Training for Startups"
                     tabIndex={0}
                   >
                     Training for Startups
-                  </Link>
+                  </ScrollLink>
+                  <ScrollLink 
+                    href="/training/advanced-automation"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
+                    ariaLabel="Advanced Automation Training"
+                    tabIndex={0}
+                  >
+                    Advanced Automation Training
+                  </ScrollLink>
                 </div>
               </div>
             )}
@@ -328,7 +335,13 @@ const Navbar = () => {
                       }
                     }}
                   >
-                    <span className="font-medium">Products</span>
+                    <ScrollLink
+                      href="/#products"
+                      className="font-medium flex-grow"
+                      ariaLabel="Products"
+                    >
+                      Products
+                    </ScrollLink>
                     <svg 
                       className={`w-4 h-4 transition-transform ${activeDropdown === 'product-mobile' ? 'rotate-180' : ''}`} 
                       fill="none" 
@@ -341,39 +354,33 @@ const Navbar = () => {
                   </div>
                   {activeDropdown === 'product-mobile' && (
                     <div className="pl-4 mt-2 space-y-2 border-l border-gray-200">
-                      <Link 
+                      <ScrollLink 
                         href="/#products"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          scrollToSection('products');
-                          setIsMenuOpen(false);
-                        }}
                         className="block text-gray-600 hover:text-primary-600"
+                        ariaLabel="AI Receptionist"
+                        tabIndex={0}
+                        onAfterClick={() => setIsMenuOpen(false)}
                       >
                         AI Receptionist
-                      </Link>
-                      <Link 
+                      </ScrollLink>
+                      <ScrollLink 
                         href="/#products"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          scrollToSection('products');
-                          setIsMenuOpen(false);
-                        }}
                         className="block text-gray-600 hover:text-primary-600"
+                        ariaLabel="AI Chatbot"
+                        tabIndex={0}
+                        onAfterClick={() => setIsMenuOpen(false)}
                       >
                         AI Chatbot
-                      </Link>
-                      <Link 
+                      </ScrollLink>
+                      <ScrollLink 
                         href="/#products"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          scrollToSection('products');
-                          setIsMenuOpen(false);
-                        }}
                         className="block text-gray-600 hover:text-primary-600"
+                        ariaLabel="AI Lead Generator"
+                        tabIndex={0}
+                        onAfterClick={() => setIsMenuOpen(false)}
                       >
                         AI Lead Generator
-                      </Link>
+                      </ScrollLink>
                     </div>
                   )}
                 </div>
@@ -382,9 +389,22 @@ const Navbar = () => {
                 <div>
                   <div
                     className="flex justify-between items-center text-gray-700 hover:text-primary-600 transition-colors"
-                    onClick={() => handleToggleDropdown('services-mobile')}
+                    onClick={() => {
+                      if (activeDropdown === 'services-mobile') {
+                        setActiveDropdown(null);
+                      } else {
+                        setActiveDropdown('services-mobile');
+                        scrollToSection('services');
+                      }
+                    }}
                   >
-                    <span className="font-medium">Services</span>
+                    <ScrollLink
+                      href="/#services"
+                      className="font-medium flex-grow"
+                      ariaLabel="Services"
+                    >
+                      Services
+                    </ScrollLink>
                     <svg 
                       className={`w-4 h-4 transition-transform ${activeDropdown === 'services-mobile' ? 'rotate-180' : ''}`} 
                       fill="none" 
@@ -397,34 +417,33 @@ const Navbar = () => {
                   </div>
                   {activeDropdown === 'services-mobile' && (
                     <div className="pl-4 mt-2 space-y-2 border-l border-gray-200">
-                      <Link 
-                        href="/services/ai-consultation" 
+                      <ScrollLink 
+                        href="/#services" 
                         className="block text-gray-600 hover:text-primary-600"
-                        onClick={() => setIsMenuOpen(false)}
+                        ariaLabel="AI Consultation"
+                        tabIndex={0}
+                        onAfterClick={() => setIsMenuOpen(false)}
                       >
                         AI Consultation
-                      </Link>
-                      <Link 
-                        href="/services/business-intelligence" 
+                      </ScrollLink>
+                      <ScrollLink 
+                        href="/#services" 
                         className="block text-gray-600 hover:text-primary-600"
-                        onClick={() => setIsMenuOpen(false)}
+                        ariaLabel="Business Intelligence"
+                        tabIndex={0}
+                        onAfterClick={() => setIsMenuOpen(false)}
                       >
                         Business Intelligence
-                      </Link>
-                      <Link 
-                        href="/services/it-support" 
+                      </ScrollLink>
+                      <ScrollLink 
+                        href="/#services" 
                         className="block text-gray-600 hover:text-primary-600"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        IT Support
-                      </Link>
-                      <Link 
-                        href="/services/ai-startup-suite" 
-                        className="block text-gray-600 hover:text-primary-600"
-                        onClick={() => setIsMenuOpen(false)}
+                        ariaLabel="AI Startup Suite"
+                        tabIndex={0}
+                        onAfterClick={() => setIsMenuOpen(false)}
                       >
                         AI Startup Suite
-                      </Link>
+                      </ScrollLink>
                     </div>
                   )}
                 </div>
@@ -448,20 +467,33 @@ const Navbar = () => {
                   </div>
                   {activeDropdown === 'training-mobile' && (
                     <div className="pl-4 mt-2 space-y-2 border-l border-gray-200">
-                      <Link 
+                      <ScrollLink 
                         href="/training/sme" 
                         className="block text-gray-600 hover:text-primary-600"
-                        onClick={() => setIsMenuOpen(false)}
+                        ariaLabel="Training for SME"
+                        tabIndex={0}
+                        onAfterClick={() => setIsMenuOpen(false)}
                       >
                         Training for SME
-                      </Link>
-                      <Link 
+                      </ScrollLink>
+                      <ScrollLink 
                         href="/training/startups" 
                         className="block text-gray-600 hover:text-primary-600"
-                        onClick={() => setIsMenuOpen(false)}
+                        ariaLabel="Training for Startups"
+                        tabIndex={0}
+                        onAfterClick={() => setIsMenuOpen(false)}
                       >
                         Training for Startups
-                      </Link>
+                      </ScrollLink>
+                      <ScrollLink 
+                        href="/training/advanced-automation" 
+                        className="block text-gray-600 hover:text-primary-600"
+                        ariaLabel="Advanced Automation Training"
+                        tabIndex={0}
+                        onAfterClick={() => setIsMenuOpen(false)}
+                      >
+                        Advanced Automation Training
+                      </ScrollLink>
                     </div>
                   )}
                 </div>

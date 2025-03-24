@@ -1,5 +1,8 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
+import ScrollLink from "../components/ScrollLink";
 
 export default function Home() {
   return (
@@ -106,17 +109,17 @@ export default function Home() {
               <p className="text-gray-600 mb-6">
                 Automate customer inquiries and appointment scheduling with our intelligent virtual receptionist that handles calls, messages, and emails 24/7.
               </p>
-              <Link 
-                href="/product/ai-receptionist" 
+              <ScrollLink 
+                href="/#products" 
                 className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700"
-                aria-label="Learn more about AI Receptionist"
+                ariaLabel="Learn more about AI Receptionist"
                 tabIndex={0}
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </ScrollLink>
             </div>
             
             {/* AI Chatbot */}
@@ -130,17 +133,17 @@ export default function Home() {
               <p className="text-gray-600 mb-6">
                 Engage with website visitors in real-time through our conversational AI chatbot that understands context, provides accurate information, and qualifies leads.
               </p>
-              <Link 
-                href="/product/ai-chatbot" 
+              <ScrollLink 
+                href="/#products" 
                 className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700"
-                aria-label="Learn more about AI Chatbot"
+                ariaLabel="Learn more about AI Chatbot"
                 tabIndex={0}
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </ScrollLink>
             </div>
             
             {/* AI Lead Generator */}
@@ -154,17 +157,17 @@ export default function Home() {
               <p className="text-gray-600 mb-6">
                 Identify and nurture qualified leads with our AI-powered lead generation tool that captures, analyzes, and prioritizes prospects based on conversion potential.
               </p>
-              <Link 
-                href="/product/ai-lead-generator" 
+              <ScrollLink 
+                href="/#products" 
                 className="inline-flex items-center text-green-600 font-medium hover:text-green-700"
-                aria-label="Learn more about AI Lead Generator"
+                ariaLabel="Learn more about AI Lead Generator"
                 tabIndex={0}
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </ScrollLink>
             </div>
           </div>
         </div>
@@ -239,6 +242,94 @@ export default function Home() {
                   <span>Reduce wait times, resolve issues faster, and retain 50% more customers</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Services Section */}
+      <section className="py-12 md:py-24 bg-gray-50" id="services">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Our <span className="gradient-text">Services</span>
+            </h2>
+            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+              Comprehensive AI-driven services tailored to your business needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* AI Consultation */}
+            <div className="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group">
+              <div className="w-16 h-16 rounded-lg bg-indigo-100 flex items-center justify-center mb-6 group-hover:bg-indigo-200 transition-colors">
+                <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">AI Consultation</h3>
+              <p className="text-gray-600 mb-6">
+                Expert guidance on integrating AI into your business processes. Our consultants analyze your needs and design custom AI solutions to optimize operations and drive growth.
+              </p>
+              <ScrollLink 
+                href="/#services" 
+                className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-700"
+                ariaLabel="Learn more about AI Consultation"
+                tabIndex={0}
+              >
+                Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </ScrollLink>
+            </div>
+            
+            {/* Business Intelligence */}
+            <div className="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group">
+              <div className="w-16 h-16 rounded-lg bg-amber-100 flex items-center justify-center mb-6 group-hover:bg-amber-200 transition-colors">
+                <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">Business Intelligence</h3>
+              <p className="text-gray-600 mb-6">
+                Transform your data into actionable insights with our BI solutions. We implement advanced analytics platforms that help you make data-driven decisions and identify growth opportunities.
+              </p>
+              <ScrollLink 
+                href="/#services" 
+                className="inline-flex items-center text-amber-600 font-medium hover:text-amber-700"
+                ariaLabel="Learn more about Business Intelligence"
+                tabIndex={0}
+              >
+                Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </ScrollLink>
+            </div>
+            
+            {/* AI Startup Suite */}
+            <div className="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group">
+              <div className="w-16 h-16 rounded-lg bg-rose-100 flex items-center justify-center mb-6 group-hover:bg-rose-200 transition-colors">
+                <svg className="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">AI Startup Suite</h3>
+              <p className="text-gray-600 mb-6">
+                A comprehensive package for startups looking to leverage AI from day one. Includes essential AI tools, integration services, and ongoing support at startup-friendly pricing.
+              </p>
+              <ScrollLink 
+                href="/#services" 
+                className="inline-flex items-center text-rose-600 font-medium hover:text-rose-700"
+                ariaLabel="Learn more about AI Startup Suite"
+                tabIndex={0}
+              >
+                Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </ScrollLink>
             </div>
           </div>
         </div>
