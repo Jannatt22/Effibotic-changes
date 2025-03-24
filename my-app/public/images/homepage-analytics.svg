@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Shapes -->
+  <path d="M50,50 Q400,0 500,300 T50,350 Z" fill="#E8F4FF" opacity="0.5"/>
+  <path d="M100,100 Q450,50 550,350 T100,400 Z" fill="#D1EBFE" opacity="0.3"/>
+  
+  <!-- Pipeline Value Card -->
+  <g transform="translate(100, 50)">
+    <rect x="0" y="0" width="280" height="160" rx="12" fill="white" filter="drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.1))"/>
+    <text x="20" y="40" font-family="Arial" font-size="16" fill="#64748B">Pipeline Value</text>
+    <text x="20" y="80" font-family="Arial" font-size="32" font-weight="bold" fill="#1E293B">$28,983</text>
+    
+    <!-- Status Bars -->
+    <g transform="translate(20, 100)">
+      <rect x="0" y="0" width="200" height="8" rx="4" fill="#10B981"/>
+      <rect x="0" y="20" width="120" height="8" rx="4" fill="#F59E0B"/>
+      <rect x="0" y="40" width="40" height="8" rx="4" fill="#EF4444"/>
+      
+      <text x="220" y="8" font-family="Arial" font-size="14" fill="#64748B">224</text>
+      <text x="220" y="28" font-family="Arial" font-size="14" fill="#64748B">128</text>
+      <text x="220" y="48" font-family="Arial" font-size="14" fill="#64748B">16</text>
+    </g>
+  </g>
+
+  <!-- Conversion Rate Card -->
+  <g transform="translate(400, 50)">
+    <rect x="0" y="0" width="160" height="120" rx="12" fill="white" filter="drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.1))"/>
+    <text x="20" y="40" font-family="Arial" font-size="16" fill="#64748B">Conversion Rate</text>
+    <text x="20" y="80" font-family="Arial" font-size="24" font-weight="bold" fill="#10B981">+78.4%</text>
+    
+    <!-- Mini Graph -->
+    <path d="M20,100 Q40,80 60,90 T100,70" stroke="#10B981" fill="none" stroke-width="2"/>
+  </g>
+
+  <!-- Funnel Chart -->
+  <g transform="translate(100, 230)">
+    <rect x="0" y="0" width="280" height="160" rx="12" fill="white" filter="drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.1))"/>
+    <text x="20" y="40" font-family="Arial" font-size="16" fill="#64748B">Funnel</text>
+    
+    <!-- Funnel Shape -->
+    <path d="M40,60 L240,60 L200,160 L80,160 Z" fill="#3B82F6" opacity="0.2"/>
+    <path d="M60,80 L220,80 L190,140 L90,140 Z" fill="#3B82F6" opacity="0.4"/>
+    <path d="M80,100 L200,100 L180,120 L100,120 Z" fill="#3B82F6" opacity="0.6"/>
+  </g>
+
+  <!-- Success Icon -->
+  <circle cx="480" cy="160" r="20" fill="#10B981"/>
+  <path d="M470,160 L478,168 L490,152" stroke="white" stroke-width="3" fill="none"/>
+</svg> 

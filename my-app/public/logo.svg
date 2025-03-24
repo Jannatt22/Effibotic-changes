@@ -1,0 +1,23 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle (optional) -->
+  <rect width="200" height="200" rx="0" fill="white" fill-opacity="0"/>
+  
+  <!-- Main "eb" logo with 3D effect -->
+  <path d="M92 40 L108 40 L108 60 L120 60 L100 25 L80 60 L92 60 Z" fill="#3a7d9e"/>
+  <path d="M92 40 L108 40 L108 60 L120 60 L100 25 L80 60 L92 60 Z" fill="#3a7d9e"/>
+  
+  <!-- The "e" part -->
+  <path d="M60 120 C40 120 30 100 30 80 C30 60 40 40 70 40 C100 40 95 60 95 70 L50 70 C50 85 60 95 75 95 C90 95 95 90 95 90 L105 110 C105 110 90 120 60 120 Z" fill="#3a7d9e"/>
+  <path d="M50 70 L80 70 C80 60 75 55 65 55 C55 55 50 60 50 70 Z" fill="white"/>
+  
+  <!-- The "b" part -->
+  <path d="M100 120 C80 120 70 110 70 85 L70 40 L95 40 L95 80 C95 90 100 95 110 95 C120 95 125 85 125 75 C125 65 120 55 110 55 L95 55 L95 40 L115 40 C145 40 150 70 150 80 C150 100 130 120 100 120 Z" fill="#3a7d9e"/>
+  
+  <!-- Shadow/3D effect -->
+  <path d="M62 123 C42 123 32 103 32 83 C32 63 42 43 72 43 C102 43 97 63 97 73 L52 73 C52 88 62 98 77 98 C92 98 97 93 97 93 L107 113 C107 113 92 123 62 123 Z" fill="black" fill-opacity="0.2" transform="translate(3, 3)"/>
+  <path d="M102 123 C82 123 72 113 72 88 L72 43 L97 43 L97 83 C97 93 102 98 112 98 C122 98 127 88 127 78 C127 68 122 58 112 58 L97 58 L97 43 L117 43 C147 43 152 73 152 83 C152 103 132 123 102 123 Z" fill="black" fill-opacity="0.2" transform="translate(3, 3)"/>
+  <path d="M94 43 L110 43 L110 63 L122 63 L102 28 L82 63 L94 63 Z" fill="black" fill-opacity="0.2" transform="translate(3, 3)"/>
+  
+  <!-- "EFFIBOTIC" text below -->
+  <text x="100" y="170" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="#3a7d9e" text-anchor="middle">EFFIBOTIC</text>
+</svg> 
