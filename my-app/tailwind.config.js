@@ -1,25 +1,30 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+      },
       colors: {
         primary: {
-          50: '#ecf5fa',
-          100: '#d0e6f2',
-          200: '#a3cde5',
-          300: '#75b3d7',
-          400: '#489aca',
-          500: '#3a7d9e', // Main brand color
-          600: '#2e658a',
-          700: '#2c5d78', // Secondary brand color
-          800: '#1a3c50',
-          900: '#0d1e28',
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+          950: '#082f49',
         },
         secondary: {
           50: '#e6eef2',
@@ -37,10 +42,6 @@ module.exports = {
           primary: '#0c192f',   // Dark blue from Theme_2
           secondary: '#09101f', // Darker blue
         }
-      },
-      fontFamily: {
-        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-geist-mono)', 'monospace'],
       },
     },
   },
