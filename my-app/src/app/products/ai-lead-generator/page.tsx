@@ -18,7 +18,9 @@ export default function AILeadGeneratorPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
-                  href="/book-demo" 
+                  href="https://calendly.com/siva-effibotic/30min" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white hover:bg-gray-100 text-primary-600 border border-primary-600 px-8 py-3 rounded-lg font-semibold transition-colors inline-block text-center"
                 >
                   Book Demo

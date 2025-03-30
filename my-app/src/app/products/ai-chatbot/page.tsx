@@ -18,7 +18,9 @@ export default function AIChatbotPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
-                  href="/book-demo" 
+                  href="https://calendly.com/siva-effibotic/30min" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block text-center"
                 >
                   Book a Demo
@@ -32,13 +34,14 @@ export default function AIChatbotPage() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <div className="bg-white p-4 rounded-xl shadow-lg">
+              <div className="bg-white p-6 rounded-xl shadow-lg">
                 <Image
-                  src="/images/ai-chatbot-hero.jpg"
-                  alt="AI Chatbot Interface"
-                  width={600}
-                  height={400}
-                  className="rounded-lg w-full h-auto"
+                  src="/images/AI_chatbot.png"
+                  alt="AI Chatbot Interface Demonstration"
+                  width={800}
+                  height={600}
+                  className="rounded-lg w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                  priority
                 />
               </div>
             </div>
@@ -128,13 +131,14 @@ export default function AIChatbotPage() {
                   </li>
                 </ul>
               </div>
-              <div className="md:w-1/2 bg-gray-100 p-4">
+              <div className="md:w-1/2 bg-gray-100 p-6">
                 <Image
-                  src="/images/natural-language-feature.jpg"
-                  alt="Natural Language Understanding"
+                  src="/images/Natural.jpg"
+                  alt="Natural Language Understanding Demonstration"
                   width={500}
                   height={300}
-                  className="rounded-lg w-full h-auto"
+                  className="rounded-lg w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                  priority
                 />
               </div>
             </div>
@@ -166,13 +170,14 @@ export default function AIChatbotPage() {
                   </li>
                 </ul>
               </div>
-              <div className="md:w-1/2 bg-gray-100 p-4">
+              <div className="md:w-1/2 bg-gray-100 p-6">
                 <Image
-                  src="/images/chatbot-integration.jpg"
-                  alt="Chatbot Integration"
+                  src="/images/Whatsapp_bot.jpg"
+                  alt="Multi-platform Chatbot Integration"
                   width={500}
                   height={300}
-                  className="rounded-lg w-full h-auto"
+                  className="rounded-lg w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                  priority
                 />
               </div>
             </div>
@@ -188,10 +193,12 @@ export default function AIChatbotPage() {
             Schedule a personalized demo to see how our AI Chatbot can enhance your customer experience and reduce support costs.
           </p>
           <Link 
-            href="/book-demo" 
+            href="https://calendly.com/siva-effibotic/30min" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-colors inline-block"
           >
-            Book Your Free Demo
+            Book Demo
           </Link>
         </div>
       </section>

@@ -18,7 +18,9 @@ export default function AIReceptionistPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
-                  href="/book-demo" 
+                  href="https://calendly.com/siva-effibotic/30min" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block text-center"
                 >
                   Book a Demo
@@ -32,13 +34,14 @@ export default function AIReceptionistPage() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <div className="bg-white p-4 rounded-xl shadow-lg">
+              <div className="bg-white p-6 rounded-xl shadow-lg">
                 <Image
-                  src="/images/ai-receptionist-hero.jpg"
-                  alt="AI Receptionist Interface"
-                  width={600}
-                  height={400}
-                  className="rounded-lg w-full h-auto"
+                  src="/images/AI_woman.jpeg"
+                  alt="AI Receptionist working alongside human staff"
+                  width={800}
+                  height={600}
+                  className="rounded-lg w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                  priority
                 />
               </div>
             </div>
@@ -130,11 +133,12 @@ export default function AIReceptionistPage() {
               </div>
               <div className="md:w-1/2 bg-gray-100 p-4">
                 <Image
-                  src="/images/call-handling-feature.jpg"
-                  alt="AI Call Handling"
+                  src="/images/AI_Intelligent.png"
+                  alt="AI Intelligent Call Handling Interface"
                   width={500}
                   height={300}
-                  className="rounded-lg w-full h-auto"
+                  className="rounded-lg w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                  priority
                 />
               </div>
             </div>
@@ -168,11 +172,11 @@ export default function AIReceptionistPage() {
               </div>
               <div className="md:w-1/2 bg-gray-100 p-4">
                 <Image
-                  src="/images/appointment-scheduling.jpg"
-                  alt="Appointment Scheduling"
+                  src="/images/AI_receptionist.jpg"
+                  alt="AI Receptionist Interface"
                   width={500}
                   height={300}
-                  className="rounded-lg w-full h-auto"
+                  className="rounded-lg w-full h-auto object-cover"
                 />
               </div>
             </div>
@@ -188,10 +192,12 @@ export default function AIReceptionistPage() {
             Schedule a personalized demo to see how our AI Receptionist can help your business handle customer interactions more efficiently.
           </p>
           <Link 
-            href="/book-demo" 
+            href="https://calendly.com/siva-effibotic/30min" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-colors inline-block"
           >
-            Book Your Free Demo
+            Book Demo
           </Link>
         </div>
       </section>

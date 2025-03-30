@@ -70,15 +70,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-              <div className="relative w-full max-w-md h-80 md:h-96">
-        <Image
-                  src="/images/homepage-analytics.svg"
-                  alt="Business Analytics Dashboard"
+            <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+              <div className="relative w-full max-w-xl h-80 md:h-[450px]">
+                <Image
+                  src="/images/Home_screen_image.jpg"
+                  alt="Business team collaborating on growth strategies"
                   fill
-                  className="object-contain hover:scale-105 transition-transform duration-300"
-          priority
-        />
+                  className="object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -262,20 +262,9 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">AI Consultation</h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600">
                 Expert guidance on integrating AI into your business processes. Our consultants analyze your needs and design custom AI solutions to optimize operations and drive growth.
               </p>
-              <ScrollLink 
-                href="/#services" 
-                className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-700"
-                ariaLabel="Learn more about AI Consultation"
-                tabIndex={0}
-              >
-                Learn More
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </ScrollLink>
             </div>
             
             {/* Business Intelligence */}
@@ -286,20 +275,9 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">Business Intelligence</h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600">
                 Transform your data into actionable insights with our BI solutions. We implement advanced analytics platforms that help you make data-driven decisions and identify growth opportunities.
               </p>
-              <ScrollLink 
-                href="/#services" 
-                className="inline-flex items-center text-amber-600 font-medium hover:text-amber-700"
-                ariaLabel="Learn more about Business Intelligence"
-                tabIndex={0}
-              >
-                Learn More
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </ScrollLink>
             </div>
             
             {/* AI Startup Suite */}
@@ -310,20 +288,9 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">AI Startup Suite</h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600">
                 A comprehensive package for startups looking to leverage AI from day one. Includes essential AI tools, integration services, and ongoing support at startup-friendly pricing.
               </p>
-              <ScrollLink 
-                href="/#services" 
-                className="inline-flex items-center text-rose-600 font-medium hover:text-rose-700"
-                ariaLabel="Learn more about AI Startup Suite"
-                tabIndex={0}
-              >
-                Learn More
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </ScrollLink>
             </div>
           </div>
         </div>
@@ -353,7 +320,7 @@ export default function Home() {
               <p className="text-gray-600 mb-6">
                 Comprehensive AI training tailored for small to medium enterprises and startups. Learn how to implement AI solutions that drive growth and efficiency.
               </p>
-              <ul className="space-y-3 mb-8 text-gray-600">
+              <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -373,17 +340,6 @@ export default function Home() {
                   Scaling with AI
                 </li>
               </ul>
-              <ScrollLink 
-                href="/#training" 
-                className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700"
-                ariaLabel="Learn more about AI Training for SME / Startup"
-                tabIndex={0}
-              >
-                Learn More
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </ScrollLink>
             </div>
 
             {/* AI Training for Healthcare Professionals */}
@@ -397,7 +353,7 @@ export default function Home() {
               <p className="text-gray-600 mb-6">
                 Specialized AI training for healthcare professionals focusing on medical data analysis, patient care optimization, and healthcare automation.
               </p>
-              <ul className="space-y-3 mb-8 text-gray-600">
+              <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-purple-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -417,17 +373,6 @@ export default function Home() {
                   Healthcare Automation
                 </li>
               </ul>
-              <ScrollLink 
-                href="/#training" 
-                className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700"
-                ariaLabel="Learn more about Healthcare AI Training"
-                tabIndex={0}
-              >
-                Learn More
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </ScrollLink>
             </div>
 
             {/* Advanced AI Automation Training */}
@@ -441,7 +386,7 @@ export default function Home() {
               <p className="text-gray-600 mb-6">
                 Deep dive into advanced AI automation techniques, covering machine learning, process automation, and intelligent system design.
               </p>
-              <ul className="space-y-3 mb-8 text-gray-600">
+              <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -461,17 +406,6 @@ export default function Home() {
                   Intelligent System Design
                 </li>
               </ul>
-              <ScrollLink 
-                href="/#training" 
-                className="inline-flex items-center text-green-600 font-medium hover:text-green-700"
-                ariaLabel="Learn more about Advanced AI Automation"
-                tabIndex={0}
-              >
-                Learn More
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </ScrollLink>
             </div>
           </div>
         </div>
@@ -490,19 +424,16 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
+            {/* Testimonial 1 - AI Receptionist */}
             <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Sarah Johnson</h4>
-                  <p className="text-sm text-gray-600">CTO, TechInnovate</p>
-                </div>
+              <div className="mb-4">
+                <h4 className="font-semibold text-gray-900">Dr. Emily Chen</h4>
+                <p className="text-sm text-gray-600">Dental Clinic Owner</p>
               </div>
-              <p className="text-gray-700 italic">
-                "Implementing Effibotic's automation solutions has reduced our processing time by 65% and significantly improved accuracy. Their team was professional and delivered exactly what we needed."
+              <p className="text-gray-700 italic mb-4">
+                "The AI Receptionist has revolutionized our practice. It handles appointment scheduling 24/7, reduces no-shows with automated reminders, and our patients love how easy it is to use. We've seen a 30% increase in booking efficiency."
               </p>
-              <div className="mt-4 flex text-primary-500">
+              <div className="flex text-yellow-400">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
@@ -521,19 +452,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Testimonial 2 */}
+            {/* Testimonial 2 - AI Chatbot */}
             <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Michael Rodriguez</h4>
-                  <p className="text-sm text-gray-600">Operations Director, LogiTech</p>
-                </div>
+              <div className="mb-4">
+                <h4 className="font-semibold text-gray-900">Mark Thompson</h4>
+                <p className="text-sm text-gray-600">E-commerce Director</p>
               </div>
-              <p className="text-gray-700 italic">
-                "The custom workflow automation Effibotic implemented for our logistics department has been a game-changer. We've seen a 40% increase in efficiency and our team can now focus on strategic initiatives rather than repetitive tasks."
+              <p className="text-gray-700 italic mb-4">
+                "Our customer support has been transformed by the AI Chatbot. It handles over 80% of routine inquiries instantly, provides 24/7 support, and has improved our customer satisfaction scores by 40%. The multilingual support is a game-changer."
               </p>
-              <div className="mt-4 flex text-primary-500">
+              <div className="flex text-yellow-400">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
@@ -552,19 +480,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Testimonial 3 */}
+            {/* Testimonial 3 - AI Lead Generator */}
             <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Jennifer Li</h4>
-                  <p className="text-sm text-gray-600">CEO, HealthInnovate</p>
-                </div>
+              <div className="mb-4">
+                <h4 className="font-semibold text-gray-900">Lisa Rodriguez</h4>
+                <p className="text-sm text-gray-600">Sales Manager</p>
               </div>
-              <p className="text-gray-700 italic">
-                "As a healthcare provider, data security and compliance are critical for us. Effibotic not only automated our patient intake process but also ensured that all our systems meet the highest security standards. Highly recommended!"
+              <p className="text-gray-700 italic mb-4">
+                "The AI Lead Generator has completely transformed our sales process. It not only identifies potential leads but qualifies them with incredible accuracy. Our conversion rates have increased by 45%, and the automated nurturing sequences save our team countless hours."
               </p>
-              <div className="mt-4 flex text-primary-500">
+              <div className="flex text-yellow-400">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
@@ -596,7 +521,9 @@ export default function Home() {
             Take the first step towards optimizing your operations with Effibotic's automation solutions. Schedule a demo today and see the difference our technology can make.
           </p>
           <Link 
-            href="/book-demo" 
+            href="https://calendly.com/siva-effibotic/30min" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-white text-primary-600 hover:bg-gray-100 py-3 px-10 rounded-full font-semibold text-lg transition-colors shadow-md hover:shadow-lg"
             aria-label="Book a demo"
             tabIndex={0}

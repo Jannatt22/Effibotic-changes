@@ -291,7 +291,9 @@ const Navbar = () => {
         {/* Right Side - Book Demo */}
         <div className="hidden md:block">
           <Link 
-            href="/book-demo" 
+            href="https://calendly.com/siva-effibotic/30min"
+            target="_blank"
+            rel="noopener noreferrer" 
             className="bg-white hover:bg-gray-100 text-primary-600 border border-primary-600 px-8 py-3 rounded-full font-semibold transition-colors text-xl shadow-md hover:shadow-lg"
             aria-label="Book Demo"
             tabIndex={0}
@@ -304,7 +306,9 @@ const Navbar = () => {
         <div className="md:hidden flex items-center space-x-3">
           {/* Mobile Book Demo Button */}
           <Link 
-            href="/book-demo" 
+            href="https://calendly.com/siva-effibotic/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white hover:bg-gray-100 text-primary-600 border border-primary-600 px-4 py-2 rounded-full font-semibold transition-colors text-sm shadow-md"
             aria-label="Book Demo"
             tabIndex={0}
