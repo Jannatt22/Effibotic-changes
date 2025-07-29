@@ -130,26 +130,26 @@ const Navbar = () => {
                   <ScrollLink 
                     href="/#products"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    ariaLabel="AI Receptionist"
+                    ariaLabel="Schedly AI"
                     tabIndex={0}
                   >
-                    AI Receptionist
+                    Schedly AI
                   </ScrollLink>
                   <ScrollLink 
                     href="/#products"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    ariaLabel="AI Chatbot"
+                    ariaLabel="Salesly AI"
                     tabIndex={0}
                   >
-                    AI Chatbot
+                    Salesly AI
                   </ScrollLink>
                   <ScrollLink 
                     href="/#products"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600"
-                    ariaLabel="AI Lead Generator"
+                    ariaLabel="Procurely AI"
                     tabIndex={0}
                   >
-                    AI Lead Generator
+                    Procurely AI
                   </ScrollLink>
                 </div>
               </div>
@@ -313,29 +313,29 @@ const Navbar = () => {
                       <ScrollLink 
                         href="/#products"
                         className="block text-gray-600 hover:text-primary-600"
-                        ariaLabel="AI Receptionist"
+                        ariaLabel="Schedly AI"
                         tabIndex={0}
                         onAfterClick={() => setIsMenuOpen(false)}
                       >
-                        AI Receptionist
+                        Schedly AI
                       </ScrollLink>
                       <ScrollLink 
                         href="/#products"
                         className="block text-gray-600 hover:text-primary-600"
-                        ariaLabel="AI Chatbot"
+                        ariaLabel="Salesly AI"
                         tabIndex={0}
                         onAfterClick={() => setIsMenuOpen(false)}
                       >
-                        AI Chatbot
+                        Salesly AI
                       </ScrollLink>
                       <ScrollLink 
                         href="/#products"
                         className="block text-gray-600 hover:text-primary-600"
-                        ariaLabel="AI Lead Generator"
+                        ariaLabel="Procurely AI"
                         tabIndex={0}
                         onAfterClick={() => setIsMenuOpen(false)}
                       >
-                        AI Lead Generator
+                        Procurely AI
                       </ScrollLink>
                     </div>
                   )}

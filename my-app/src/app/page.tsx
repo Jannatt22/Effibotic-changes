@@ -98,19 +98,21 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* AI Receptionist */}
+            {/* Schedly AI */}
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group">
               <div className="w-16 h-16 rounded-lg bg-blue-100 flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-3">AI Receptionist</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">Schedly AI</h3>
               <p className="text-gray-600 mb-6">
                 Our AI receptionist handles calls, schedules appointments, and routes inquiries, allowing your staff to focus on critical tasks.
               </p>
               <Link 
-                href="/products/ai-receptionist" 
+                href="https://schedly.effibotic.com/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700"
               >
                 Learn More
@@ -120,19 +122,21 @@ export default function Home() {
               </Link>
             </div>
             
-            {/* AI Chatbot */}
+            {/* Salesly AI */}
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group">
               <div className="w-16 h-16 rounded-lg bg-purple-100 flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-3">AI Chatbot</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">Salesly AI</h3>
               <p className="text-gray-600 mb-6">
                 Deploy intelligent chatbots that understand natural language and provide instant support to your customers 24/7.
               </p>
               <Link 
-                href="/products/ai-chatbot" 
+                href="https://salesly.effibotic.com/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700"
               >
                 Learn More
@@ -142,26 +146,23 @@ export default function Home() {
               </Link>
             </div>
             
-            {/* AI Lead Generator */}
+            {/* Procurely AI */}
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group">
               <div className="w-16 h-16 rounded-lg bg-green-100 flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-3">AI Lead Generator</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">Procurely AI</h3>
               <p className="text-gray-600 mb-6">
                 Leverage AI to identify, qualify, and engage potential customers, creating a consistent pipeline of high-quality leads.
               </p>
-              <Link 
-                href="/products/ai-lead-generator" 
-                className="inline-flex items-center text-green-600 font-medium hover:text-green-700"
-              >
-                Learn More
+              <span className="inline-flex items-center text-green-600 font-medium">
+                Coming soon
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </span>
             </div>
           </div>
         </div>

@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
 
           {/* Certifications */}
-          <div className="col-span-1 flex flex-col items-center justify-center">
+          <div className="col-span-1 flex flex-col items-center justify-center space-y-4">
             <div className="flex items-center bg-white rounded-lg px-4 py-2">
               <Image
                 src="/images/BHiveLogo.png"
@@ -53,6 +53,16 @@ const Footer = () => {
                 className="object-contain"
               />
               <span className="text-gray-900 ml-2 font-medium">Backed by BHIVE</span>
+            </div>
+            <div className="flex items-center bg-white rounded-lg px-4 py-2">
+              <Image
+                src="/images/TBD.png"
+                alt="TBDC Logo"
+                width={100}
+                height={30}
+                className="object-contain"
+              />
+              <span className="text-gray-900 ml-2 font-medium">Backed by TBDC</span>
             </div>
           </div>
           
