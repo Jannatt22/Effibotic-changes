@@ -54,15 +54,15 @@ const Footer = () => {
               />
               <span className="text-gray-900 ml-2 font-medium">Backed by BHIVE</span>
             </div>
-            <div className="flex items-center bg-white rounded-lg px-4 py-2">
+            <div className="flex items-center justify-center bg-white rounded-lg px-9 py-1.5">
               <Image
                 src="/images/TBD.png"
                 alt="TBDC Logo"
-                width={100}
-                height={30}
+                width={40}
+                height={15}
                 className="object-contain"
               />
-              <span className="text-gray-900 ml-2 font-medium">Backed by TBDC</span>
+              <span className="text-gray-900 ml-6 font-medium">Backed by TBDC</span>
             </div>
           </div>
           
