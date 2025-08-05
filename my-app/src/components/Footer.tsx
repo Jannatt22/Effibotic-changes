@@ -56,7 +56,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center justify-center bg-white rounded-lg px-9 py-1.5">
               <Image
-                src="/images/TBD.png"
+                src="/images/tbdc-full-logo.png"
                 alt="TBDC Logo"
                 width={40}
                 height={15}
