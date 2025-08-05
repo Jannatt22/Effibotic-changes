@@ -99,21 +99,21 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Schedly AI */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group">
+            <div className="bg-white px-8 pt-8 pb-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group flex flex-col">
               <div className="w-16 h-16 rounded-lg bg-blue-100 flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">Schedly AI</h3>
-              <p className="text-gray-600 mb-6">
-                Our AI receptionist handles calls, schedules appointments, and routes inquiries, allowing your staff to focus on critical tasks.
+              <p className="text-gray-600 mb-4">
+                Intelligent scheduling AI that handles appointment booking, calendar management, and sends automated reminders to streamline.
               </p>
               <Link 
                 href="https://schedly.effibotic.com/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700"
+                className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 mt-1"
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -123,21 +123,21 @@ export default function Home() {
             </div>
             
             {/* Salesly AI */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group">
+            <div className="bg-white px-8 pt-8 pb-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group flex flex-col">
               <div className="w-16 h-16 rounded-lg bg-purple-100 flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">Salesly AI</h3>
-              <p className="text-gray-600 mb-6">
-                Deploy intelligent chatbots that understand natural language and provide instant support to your customers 24/7.
+              <p className="text-gray-600 mb-4">
+                Advanced sales automation AI that generates leads, qualifies prospects, and drives revenue growth.
               </p>
               <Link 
                 href="https://salesly.effibotic.com/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700"
+                className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700 mt-2"
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -147,17 +147,17 @@ export default function Home() {
             </div>
             
             {/* Procurely AI */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow group">
+            <div className="bg-white px-8 pt-8 pb-6 rounded-lg shadow-md hover:shadow-xl transition-shadow group flex flex-col">
               <div className="w-16 h-16 rounded-lg bg-green-100 flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">Procurely AI</h3>
-              <p className="text-gray-600 mb-6">
-                Leverage AI to identify, qualify, and engage potential customers, creating a consistent pipeline of high-quality leads.
+              <p className="text-gray-600 mb-4">
+                Smart procurement AI that optimizes supply chain management, vendor selection, and purchasing processes to reduce costs.
               </p>
-              <span className="inline-flex items-center text-green-600 font-medium">
+              <span className="inline-flex items-center text-green-600 font-medium mt-1">
                 Coming soon
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
