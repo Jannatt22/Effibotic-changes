@@ -54,7 +54,7 @@ const Footer = () => {
               />
               <span className="text-gray-900 ml-2 font-medium">Backed by BHIVE</span>
             </div>
-            <div className="flex items-center bg-white rounded-lg px-8 py-2">
+            <div className="flex items-center bg-white rounded-lg px-6 py-2">
               <Image
                 src="/images/tbdc-full-logo.png"
                 alt="TBDC Logo"
@@ -62,7 +62,7 @@ const Footer = () => {
                 height={30}
                 className="object-contain"
               />
-              <span className="text-gray-900 ml-2 font-medium">Backed by TBDC</span>
+              <span className="text-gray-900 ml-6 font-medium">Backed by TBDC</span>
             </div>
           </div>
           
