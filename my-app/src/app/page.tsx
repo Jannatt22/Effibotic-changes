@@ -137,7 +137,7 @@ export default function Home() {
                 href="https://salesly.effibotic.com/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700 mt-1"
+                className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700 mt-2"
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
