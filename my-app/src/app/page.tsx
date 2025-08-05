@@ -74,7 +74,7 @@ export default function Home() {
               <div className="relative w-full max-w-xl h-80 md:h-[450px]">
                 <Image
                   src="/images/Home_screen_image.jpg"
-                  alt="Business team collaborating on growth strategies"
+                  alt="Business team building AI receptionist for growth strategies"
                   fill
                   className="object-cover rounded-lg hover:scale-105 transition-transform duration-300"
                   priority
